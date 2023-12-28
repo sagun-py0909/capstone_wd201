@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <title>Bootstrap Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <title>LMS Home Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1efef;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .course-card {
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .enroll-card {
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+    }
+
+    .course-card h2 {
+      color: #007bff;
+    }
+
+    .course-card p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .enroll {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    .enroll-button {
+      background-color: red;
+      color: white;
+      cursor: pointer;
+      height: 40px;
+    }
+
+    .enroll-button:hover {
+      background-color: rgb(109, 12, 12);
+    }
+
+
+    .view-link {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      float: left;
+    }
+
+    .cancell {
+      background-color: #555;
+      color: white;
+      cursor: pointer;
+      height: 40px;
+      float: left;
+    }
+
+    .cancell:hover {
+      background-color: #333;
+    }
+
+    .navbar.nav.bg-body-tertiary {
+      background-color: #6a1b9a !important;
+    }
+
+    .grid1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar nav bg-body-tertiary fixed-top ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/home">THE LMS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Welcome {user}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/courses">My Courses</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Settings
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                <li><a class="dropdown-item" href="#"></a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="/signout">signout</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Chat with us!</a></li>
+                <li><a class="dropdown-item" href="#"></a></li>
+                <li>
+                  <a class="dropdown-item" href="#">FAQ's</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex mt-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <h1 class="mt-5">Welcome to Our Learning Management System</h1>
+  <h4>On going Courses</h4>
+  <div class="grid1">
+    <div class="course-card">
+      <h2>Course Title 5</h2>
+      <p>Description of the course. This course covers various topics related to...</p>
+
+      <div class="view-link">
+        <a href="/enroll/course1">view more</a>
+      </div>
+      <div class="enroll">
+        <button class="enroll-button ">
+          Enroll Now
+        </button>
+      </div>
+    </div>
+    <div class="course-card">
+      <h2>Course Title 6</h2>
+      <p>Description of the course. This course covers various topics related to...</p>
+      <div class="view-link">
+        <a href="/enroll/course1">view more</a>
+      </div>
+      <div class="enroll">
+        <button class="enroll-button ">
+          Enroll Now
+        </button>
+      </div>
+    </div>
+
+
+    <div class="course-card">
+      <h2>Course Title 7</h2>
+      <p>Description of the course. This course covers various topics related to...</p>
+      <div class="view-link">
+        <a href="/enroll/course1">view more</a>
+      </div>
+      <div class="enroll">
+        <button class="enroll-button ">
+          Enroll Now
+        </button>
+      </div>
+    </div>
+
+  </div>
+<h4>Explore more!!</h4>
+  <div class="grid1">
+    <div class="course-card">
+      <h2>Course Title 1</h2>
+      <p>Description of the course. This course covers various topics related to...</p>
+
+      <div class="view-link">
+        <a href="/enroll/course1">view more</a>
+      </div>
+      <div class="enroll">
+        <button class="enroll-button ">
+          Enroll Now
+        </button>
+      </div>
+    </div>
+    <div class="course-card">
+      <h2>Course Title 2</h2>
+      <p>Description of the course. This course covers various topics related to...</p>
+      <div class="view-link">
+        <a href="/enroll/course1">view more</a>
+      </div>
+      <div class="enroll">
+        <button class="enroll-button ">
+          Enroll Now
+        </button>
+      </div>
+    </div>
+
+
+    <div class="course-card">
+      <h2>Course Title 3</h2>
+      <p>Description of the course. This course covers various topics related to...</p>
+      <div class="view-link">
+        <a href="/enroll/course1">view more</a>
+      </div>
+      <div class="enroll">
+        <button class="enroll-button ">
+          Enroll Now
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="enroll-card" id="enrollCard">
+    <h2>Enrolling to {the course name}</h2>
+    <p>Content about the course...</p>
+    <div><button class="cancell">Cancel</button></div>
+    <div class="enroll">
+      <button class="enroll-button">ENROLL NOW</button>
+    </div>
+  </div>
+  <script>
+    const enrollButton = document.querySelectorAll('.enroll-button');
+    const enrollCard = document.getElementById('enrollCard');
+    enrollButton.forEach(button => {
+      button.addEventListener('click', () => {
+        enrollCard.style.display = 'block';
+      });
+    });
+    const cancelButton = document.querySelector('.cancell');
+    cancelButton.addEventListener('click', () => {
+      enrollCard.style.display = 'none';
+    });
+  </script>
+</body>
+
+</html>

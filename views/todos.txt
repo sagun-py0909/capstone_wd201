@@ -1,0 +1,5 @@
+count for each course
+creators page should have an special button for editing the course
+create new course 
+delete
+the top authors 

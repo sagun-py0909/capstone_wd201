@@ -1,0 +1,80 @@
+        .header {
+            padding: 20px;
+        }
+
+        .body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .login-container {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            width: max-content;
+            text-align: center;
+            margin-top: -20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            /* Add a smooth transition effect for color */
+        }
+
+        .login-container.hightlight-user {
+            background-color: #ffffff;
+            /* Change the color for user login */
+            color: #333;
+            /* Reset font color for user login */
+        }
+
+        .login-container.hightlight-creator {
+            background-color: #2c2929;
+            /* Change the color for creator login */
+            color: white;
+            /* Change font color for creator login */
+        }
+
+        .login-container h2 {
+            color: inherit;
+            /* Use the inherited color for h2 */
+        }
+
+        .login-creator {
+            display: none;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
